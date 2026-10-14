@@ -1,0 +1,62 @@
+[
+ {
+  "version": "1.0",
+  "doc_id": "vcmi-ccp-v1",
+  "file": "vcmi-ccp-v1.pdf",
+  "published": "2023-06-28",
+  "superseded_by": "2.0",
+  "superseded_on": "2023-11-28",
+  "status": "superseded",
+  "card": "Version 1.0 of the VCMI Claims Code of Practice was published 28 June 2023 and was superseded by version 2.0 on 28 November 2023. Versions in this collection: 1.0 (28 Jun 2023), 2.0 (28 Nov 2023), 2.1 (30 Aug 2024), 3.0 (30 Apr 2025), 3.1 (15 Aug 2025), 3.2 (23 Sep 2026)."
+ },
+ {
+  "version": "2.0",
+  "doc_id": "vcmi-ccp-v2",
+  "file": "vcmi-ccp-v2.pdf",
+  "published": "2023-11-28",
+  "superseded_by": "2.1",
+  "superseded_on": "2024-08-30",
+  "status": "superseded",
+  "card": "Version 2.0 of the VCMI Claims Code of Practice was published 28 November 2023 and was superseded by version 2.1 on 30 August 2024. Versions in this collection: 1.0 (28 Jun 2023), 2.0 (28 Nov 2023), 2.1 (30 Aug 2024), 3.0 (30 Apr 2025), 3.1 (15 Aug 2025), 3.2 (23 Sep 2026)."
+ },
+ {
+  "version": "2.1",
+  "doc_id": "vcmi-ccp-v2.1",
+  "file": "vcmi-ccp-v2.1.pdf",
+  "published": "2024-08-30",
+  "superseded_by": "3.0",
+  "superseded_on": "2025-04-30",
+  "status": "superseded",
+  "card": "Version 2.1 of the VCMI Claims Code of Practice was published 30 August 2024 and was superseded by version 3.0 on 30 April 2025. Versions in this collection: 1.0 (28 Jun 2023), 2.0 (28 Nov 2023), 2.1 (30 Aug 2024), 3.0 (30 Apr 2025), 3.1 (15 Aug 2025), 3.2 (23 Sep 2026)."
+ },
+ {
+  "version": "3.0",
+  "doc_id": "vcmi-ccp-v3.0",
+  "file": "vcmi-ccp-v3.pdf",
+  "published": "2025-04-30",
+  "superseded_by": "3.1",
+  "superseded_on": "2025-08-15",
+  "status": "superseded",
+  "card": "Version 3.0 of the VCMI Claims Code of Practice was published 30 April 2025 and was superseded by version 3.1 on 15 August 2025. Versions in this collection: 1.0 (28 Jun 2023), 2.0 (28 Nov 2023), 2.1 (30 Aug 2024), 3.0 (30 Apr 2025), 3.1 (15 Aug 2025), 3.2 (23 Sep 2026)."
+ },
+ {
+  "version": "3.1",
+  "doc_id": "vcmi-ccp-v3.1",
+  "file": "vcmi-ccp-v3.1.pdf",
+  "published": "2025-08-15",
+  "superseded_by": "3.2",
+  "superseded_on": "2026-09-23",
+  "status": "superseded",
+  "card": "Version 3.1 of the VCMI Claims Code of Practice was published 15 August 2025 and was superseded by version 3.2 on 23 September 2026. Versions in this collection: 1.0 (28 Jun 2023), 2.0 (28 Nov 2023), 2.1 (30 Aug 2024), 3.0 (30 Apr 2025), 3.1 (15 Aug 2025), 3.2 (23 Sep 2026)."
+ },
+ {
+  "version": "3.2",
+  "doc_id": "vcmi-ccp-v3.2",
+  "file": "vcmi-ccp-v3.2.pdf",
+  "published": "2026-09-23",
+  "superseded_by": null,
+  "superseded_on": null,
+  "status": "current",
+  "card": "Version 3.2 of the VCMI Claims Code of Practice, published 23 September 2026, is the latest version in this collection and is current as of 10 October 2026. Versions in this collection: 1.0 (28 Jun 2023), 2.0 (28 Nov 2023), 2.1 (30 Aug 2024), 3.0 (30 Apr 2025), 3.1 (15 Aug 2025), 3.2 (23 Sep 2026)."
+ }
+]

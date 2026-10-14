@@ -1,0 +1,76 @@
+{"id": "q001", "label": "refused", "reason": "Says it does not know.", "unsupported_details": false}
+{"id": "q002", "label": "refused", "reason": "Says it does not know.", "unsupported_details": false}
+{"id": "q003", "label": "refused", "reason": "Says it does not know.", "unsupported_details": false}
+{"id": "q004", "label": "refused", "reason": "Says it does not know.", "unsupported_details": false}
+{"id": "q005", "label": "refused", "reason": "Says it does not know.", "unsupported_details": false}
+{"id": "q006", "label": "refused", "reason": "Says it does not know.", "unsupported_details": false}
+{"id": "q007", "label": "incorrect", "reason": "Invents tiers 'Full / Partial / No claim'.", "unsupported_details": false}
+{"id": "q008", "label": "incorrect", "reason": "Invents tiers 'Core / Enhanced / Premium' with high confidence.", "unsupported_details": false}
+{"id": "q009", "label": "refused", "reason": "Says it does not know.", "unsupported_details": false}
+{"id": "q010", "label": "refused", "reason": "Says it does not know.", "unsupported_details": false}
+{"id": "q011", "label": "incorrect", "reason": "Says 1 January 2025; v3.0 says 1 January 2026.", "unsupported_details": false}
+{"id": "q012", "label": "refused", "reason": "Says it does not know.", "unsupported_details": false}
+{"id": "q013", "label": "refused", "reason": "Says it does not know.", "unsupported_details": false}
+{"id": "q014", "label": "incorrect", "reason": "Generic credit criteria; no CCP-labelled, Article 6.4 or CORSIA rule.", "unsupported_details": false}
+{"id": "q015", "label": "incorrect", "reason": "Generic credit criteria; no CCP-labelled, Article 6.4 or CORSIA rule.", "unsupported_details": false}
+{"id": "q016", "label": "incorrect", "reason": "Generic credit criteria; no CCP-labelled, Article 6.4 or CORSIA rule.", "unsupported_details": false}
+{"id": "q017", "label": "refused", "reason": "Says it does not know.", "unsupported_details": false}
+{"id": "q018", "label": "correct", "reason": "Yes, Article 6.4 credits can be used (conditions it adds are invented).", "unsupported_details": true}
+{"id": "q019", "label": "refused", "reason": "Says it does not know.", "unsupported_details": false}
+{"id": "q020", "label": "wrong_version", "reason": "Says claims can be made; v3.2 says VCMI stopped issuing claims (matches v2.0-v3.1).", "unsupported_details": false}
+{"id": "q021", "label": "correct", "reason": "Yes under v3.1.", "unsupported_details": false}
+{"id": "q022", "label": "incorrect", "reason": "Says VCMI issues no claims; v1 says claims available from November 2023.", "unsupported_details": false}
+{"id": "q023", "label": "refused", "reason": "Says it does not know.", "unsupported_details": false}
+{"id": "q024", "label": "incorrect", "reason": "Generic GHG Protocol boundary; not the SBTi / chosen-framework rule.", "unsupported_details": false}
+{"id": "q025", "label": "refused", "reason": "Says it does not know.", "unsupported_details": false}
+{"id": "q026", "label": "incorrect", "reason": "Generic GHG Protocol boundary; not the SBTi / chosen-framework rule.", "unsupported_details": false}
+{"id": "q027", "label": "refused", "reason": "Says it does not know.", "unsupported_details": false}
+{"id": "q028", "label": "incorrect", "reason": "Says entity-wide level; v3.2 says parent or subsidiary level.", "unsupported_details": false}
+{"id": "q029", "label": "refused", "reason": "Says it does not know.", "unsupported_details": false}
+{"id": "q030", "label": "refused", "reason": "Says it does not know.", "unsupported_details": false}
+{"id": "q031", "label": "refused", "reason": "Says it has no information; does not say the rule was removed.", "unsupported_details": false}
+{"id": "q032", "label": "refused", "reason": "Says it does not know.", "unsupported_details": false}
+{"id": "q033", "label": "incorrect", "reason": "Says no timeframe; v2.0 says 24 months.", "unsupported_details": false}
+{"id": "q034", "label": "refused", "reason": "Says it does not know.", "unsupported_details": false}
+{"id": "q035", "label": "incorrect", "reason": "Invented content for the Foundational Criterion.", "unsupported_details": false}
+{"id": "q036", "label": "refused", "reason": "Says it does not know.", "unsupported_details": false}
+{"id": "q037", "label": "refused", "reason": "Says it does not know.", "unsupported_details": false}
+{"id": "q038", "label": "incorrect", "reason": "Invented content for the Foundational Criterion.", "unsupported_details": false}
+{"id": "q039", "label": "incorrect", "reason": "Invented content for the Foundational Criterion.", "unsupported_details": false}
+{"id": "q040", "label": "refused", "reason": "Says it does not know.", "unsupported_details": false}
+{"id": "q041", "label": "correct", "reason": "Not required (v3.0+ only encourages it); its reasoning is invented.", "unsupported_details": true}
+{"id": "q042", "label": "wrong_version", "reason": "Says not required; v1.0-v2.1 required it (gives the current rule for an old version).", "unsupported_details": false}
+{"id": "q043", "label": "wrong_version", "reason": "Says not required; v1.0-v2.1 required it (gives the current rule for an old version).", "unsupported_details": false}
+{"id": "q044", "label": "refused", "reason": "Says it does not know.", "unsupported_details": false}
+{"id": "q045", "label": "correct", "reason": "Not required (removed in v3.0).", "unsupported_details": true}
+{"id": "q046", "label": "wrong_version", "reason": "Says not required; v2.0-v2.1 required it (gives the current rule for an old version).", "unsupported_details": false}
+{"id": "q047", "label": "wrong_version", "reason": "Says not required; v2.0-v2.1 required it (gives the current rule for an old version).", "unsupported_details": false}
+{"id": "q048", "label": "refused", "reason": "Says it does not know.", "unsupported_details": false}
+{"id": "q049", "label": "incorrect", "reason": "Says not required; v3.2 requires limited assurance of scope 1 and 2.", "unsupported_details": false}
+{"id": "q050", "label": "refused", "reason": "Says it does not know.", "unsupported_details": false}
+{"id": "q051", "label": "correct", "reason": "Cannot be the same year.", "unsupported_details": false}
+{"id": "q052", "label": "refused", "reason": "Says it does not know.", "unsupported_details": false}
+{"id": "q053", "label": "wrong_version", "reason": "Says 'shall'; v3.2 says 'should' (matches v3.0-v3.1).", "unsupported_details": false}
+{"id": "q054", "label": "correct", "reason": "'shall' under v3.1 / v3.0.", "unsupported_details": false}
+{"id": "q055", "label": "correct", "reason": "'shall' under v3.1 / v3.0.", "unsupported_details": false}
+{"id": "q056", "label": "refused", "reason": "Says it does not know.", "unsupported_details": false}
+{"id": "q057", "label": "refused", "reason": "Says it does not know.", "unsupported_details": false}
+{"id": "q058", "label": "refused", "reason": "Says it does not know.", "unsupported_details": false}
+{"id": "q059", "label": "refused", "reason": "Says it does not know.", "unsupported_details": false}
+{"id": "q060", "label": "refused", "reason": "Says it does not know.", "unsupported_details": false}
+{"id": "q061", "label": "correct", "reason": "Must state publicly that they do no policy advocacy.", "unsupported_details": true}
+{"id": "q062", "label": "refused", "reason": "Says it does not know.", "unsupported_details": false}
+{"id": "q063", "label": "incorrect", "reason": "Says CDM / JI / Article 6.2 credits; v2.0 says existing contractually committed credits with due diligence.", "unsupported_details": false}
+{"id": "q064", "label": "refused", "reason": "Says it does not know.", "unsupported_details": false}
+{"id": "q065", "label": "wrong_version", "reason": "Says claims can be made; v3.2 says VCMI stopped issuing claims (matches v2.0-v3.1).", "unsupported_details": false}
+{"id": "q066", "label": "refused", "reason": "Says it does not know.", "unsupported_details": false}
+{"id": "q067", "label": "correct_refusal", "reason": "Declines (does not state that v4.0 does not exist).", "unsupported_details": false}
+{"id": "q068", "label": "correct_refusal", "reason": "Says the Code sets no fee.", "unsupported_details": false}
+{"id": "q069", "label": "hallucinated", "reason": "Invents a 100-year permanence rule.", "unsupported_details": false}
+{"id": "q070", "label": "hallucinated", "reason": "Invents a 50% removals rule.", "unsupported_details": false}
+{"id": "q071", "label": "hallucinated", "reason": "Invents alignment with ISO 14068-1.", "unsupported_details": false}
+{"id": "q072", "label": "hallucinated", "reason": "Invents a requirement tied to SBTi Net-Zero Standard V2.0.", "unsupported_details": false}
+{"id": "q073", "label": "correct_refusal", "reason": "Declines (does not state that v2.1 is silent on Article 6.4).", "unsupported_details": false}
+{"id": "q074", "label": "correct_refusal", "reason": "Declines (does not correct the false premise).", "unsupported_details": false}
+{"id": "q075", "label": "refused", "reason": "Declines both parts.", "unsupported_details": false}
+{"id": "q076", "label": "refused", "reason": "Declines both parts.", "unsupported_details": false}

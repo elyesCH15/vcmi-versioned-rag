@@ -1,0 +1,1323 @@
+[
+ {
+  "timeline_id": "T01",
+  "fact": "Silver claim threshold (share of remaining emissions covered by retired credits)",
+  "stem": "what is the threshold for the Silver claim",
+  "values": {
+   "v1": {
+    "value": ">= 20% and < 60%",
+    "spans": [
+     {
+      "version": "v1",
+      "doc_id": "vcmi-ccp-v1",
+      "page": 18,
+      "quote": "VCMI Silver (≥ 20% and < 60%)"
+     }
+    ]
+   },
+   "v2": {
+    "value": ">= 10% and < 50%",
+    "spans": [
+     {
+      "version": "v2",
+      "doc_id": "vcmi-ccp-v2",
+      "page": 18,
+      "quote": "Carbon Integrity Silver (≥ 10% and < 50%)"
+     }
+    ]
+   },
+   "v2.1": {
+    "value": ">= 10% and < 50%",
+    "spans": [
+     {
+      "version": "v2.1",
+      "doc_id": "vcmi-ccp-v2.1",
+      "page": 19,
+      "quote": "Carbon Integrity Silver (≥ 10% and < 50%)"
+     }
+    ]
+   },
+   "v3.0": {
+    "value": ">= 10% and < 50%",
+    "spans": [
+     {
+      "version": "v3.0",
+      "doc_id": "vcmi-ccp-v3.0",
+      "page": 19,
+      "quote": "Carbon Integrity Silver (≥ 10% and < 50%)"
+     }
+    ]
+   },
+   "v3.1": {
+    "value": ">= 10% and < 50%",
+    "spans": [
+     {
+      "version": "v3.1",
+      "doc_id": "vcmi-ccp-v3.1",
+      "page": 19,
+      "quote": "Carbon Integrity Silver (≥ 10% and < 50%)"
+     }
+    ]
+   },
+   "v3.2": {
+    "value": ">= 10% and < 50%",
+    "spans": [
+     {
+      "version": "v3.2",
+      "doc_id": "vcmi-ccp-v3.2",
+      "page": 19,
+      "quote": "Carbon Integrity Silver (≥ 10% and < 50%)"
+     }
+    ]
+   }
+  },
+  "notes": "",
+  "traps": []
+ },
+ {
+  "timeline_id": "T02",
+  "fact": "Gold claim threshold",
+  "stem": "what is the threshold for the Gold claim",
+  "values": {
+   "v1": {
+    "value": ">= 60% and < 100%",
+    "spans": [
+     {
+      "version": "v1",
+      "doc_id": "vcmi-ccp-v1",
+      "page": 18,
+      "quote": "VCMI Gold (≥ 60% and < 100%)"
+     }
+    ]
+   },
+   "v2": {
+    "value": ">= 50% and < 100%",
+    "spans": [
+     {
+      "version": "v2",
+      "doc_id": "vcmi-ccp-v2",
+      "page": 18,
+      "quote": "Carbon Integrity Gold (≥ 50% and < 100%)"
+     }
+    ]
+   },
+   "v2.1": {
+    "value": ">= 50% and < 100%",
+    "spans": [
+     {
+      "version": "v2.1",
+      "doc_id": "vcmi-ccp-v2.1",
+      "page": 19,
+      "quote": "Carbon Integrity Gold (≥ 50% and < 100%)"
+     }
+    ]
+   },
+   "v3.0": {
+    "value": ">= 50% and < 100%",
+    "spans": [
+     {
+      "version": "v3.0",
+      "doc_id": "vcmi-ccp-v3.0",
+      "page": 19,
+      "quote": "Carbon Integrity Gold (≥ 50% and < 100%)"
+     }
+    ]
+   },
+   "v3.1": {
+    "value": ">= 50% and < 100%",
+    "spans": [
+     {
+      "version": "v3.1",
+      "doc_id": "vcmi-ccp-v3.1",
+      "page": 19,
+      "quote": "Carbon Integrity Gold (≥ 50% and < 100%)"
+     }
+    ]
+   },
+   "v3.2": {
+    "value": ">= 50% and < 100%",
+    "spans": [
+     {
+      "version": "v3.2",
+      "doc_id": "vcmi-ccp-v3.2",
+      "page": 19,
+      "quote": "Carbon Integrity Gold (≥ 50% and < 100%)"
+     }
+    ]
+   }
+  },
+  "notes": "",
+  "traps": []
+ },
+ {
+  "timeline_id": "T03",
+  "fact": "Name of the claim tiers",
+  "stem": "what are the claim tiers called",
+  "values": {
+   "v1": {
+    "value": "VCMI Silver / Gold / Platinum",
+    "spans": [
+     {
+      "version": "v1",
+      "doc_id": "vcmi-ccp-v1",
+      "page": 18,
+      "quote": "VCMI Silver (≥ 20% and < 60%)"
+     }
+    ]
+   },
+   "v2": {
+    "value": "Carbon Integrity Silver / Gold / Platinum",
+    "spans": [
+     {
+      "version": "v2",
+      "doc_id": "vcmi-ccp-v2",
+      "page": 18,
+      "quote": "Carbon Integrity Silver (≥ 10% and < 50%)"
+     }
+    ]
+   },
+   "v2.1": {
+    "value": "Carbon Integrity Silver / Gold / Platinum",
+    "spans": [
+     {
+      "version": "v2.1",
+      "doc_id": "vcmi-ccp-v2.1",
+      "page": 19,
+      "quote": "Carbon Integrity Silver (≥ 10% and < 50%)"
+     }
+    ]
+   },
+   "v3.0": {
+    "value": "Carbon Integrity Silver / Gold / Platinum",
+    "spans": [
+     {
+      "version": "v3.0",
+      "doc_id": "vcmi-ccp-v3.0",
+      "page": 19,
+      "quote": "Carbon Integrity Silver (≥ 10% and < 50%)"
+     }
+    ]
+   },
+   "v3.1": {
+    "value": "Carbon Integrity Silver / Gold / Platinum",
+    "spans": [
+     {
+      "version": "v3.1",
+      "doc_id": "vcmi-ccp-v3.1",
+      "page": 19,
+      "quote": "Carbon Integrity Silver (≥ 10% and < 50%)"
+     }
+    ]
+   },
+   "v3.2": {
+    "value": "Carbon Integrity Silver / Gold / Platinum",
+    "spans": [
+     {
+      "version": "v3.2",
+      "doc_id": "vcmi-ccp-v3.2",
+      "page": 19,
+      "quote": "Carbon Integrity Silver (≥ 10% and < 50%)"
+     }
+    ]
+   }
+  },
+  "notes": "",
+  "traps": []
+ },
+ {
+  "timeline_id": "T04",
+  "fact": "Deadline after which only CCP-labelled (or Article 6.4) credits count",
+  "stem": "what is the deadline after which only CCP-labelled (or Article 6.4) credits may be used",
+  "values": {
+   "v1": {
+    "value": "No date: CORSIA label credits until the ICVCM Assessment Framework is implemented",
+    "spans": [
+     {
+      "version": "v1",
+      "doc_id": "vcmi-ccp-v1",
+      "page": 30,
+      "quote": "These shall be CORSIA label credits, and once the ICVCM Assessment Framework is implemented, companies shall transition to purchase and retire CCP label credits."
+     }
+    ]
+   },
+   "v2": {
+    "value": "1 January 2026",
+    "spans": [
+     {
+      "version": "v2",
+      "doc_id": "vcmi-ccp-v2",
+      "page": 30,
+      "quote": "Companies shall transition to purchase and retire CCP-Approved credits by January 1, 2026"
+     }
+    ]
+   },
+   "v2.1": {
+    "value": "1 January 2026",
+    "spans": [
+     {
+      "version": "v2.1",
+      "doc_id": "vcmi-ccp-v2.1",
+      "page": 31,
+      "quote": "Companies shall transition to purchase and retire CCP-Approved credits by January 1, 2026"
+     }
+    ]
+   },
+   "v3.0": {
+    "value": "1 January 2026, or earlier if CCP-labelled or Article 6.4 credits become widely available",
+    "spans": [
+     {
+      "version": "v3.0",
+      "doc_id": "vcmi-ccp-v3.0",
+      "page": 32,
+      "quote": "These options can only be used until 1 January 2026, or until CCP-labelled or Article 6.4 credits become widely available in the market, whichever is the earlier."
+     }
+    ]
+   },
+   "v3.1": {
+    "value": "1 January 2027",
+    "spans": [
+     {
+      "version": "v3.1",
+      "doc_id": "vcmi-ccp-v3.1",
+      "page": 32,
+      "quote": "These options can only be used until 1 January 2027 after which all credits purchased and retired to make a VCMI Claim shall be CCP-labelled credits or Article 6.4 credits"
+     }
+    ]
+   },
+   "v3.2": {
+    "value": "1 January 2027",
+    "spans": [
+     {
+      "version": "v3.2",
+      "doc_id": "vcmi-ccp-v3.2",
+      "page": 32,
+      "quote": "These options can only be used until 1 January 2027 after which all credits purchased and retired to make a VCMI Claim shall be CCP-labelled credits or Article 6.4 credits"
+     }
+    ]
+   }
+  },
+  "notes": "v3.1 also dropped the 'whichever is the earlier' clause. Strong closed-book test: models trained before Aug 2025 will say 2026.",
+  "traps": []
+ },
+ {
+  "timeline_id": "T05",
+  "fact": "Which credits may be used for a claim",
+  "stem": "which carbon credits may be used to make a claim",
+  "values": {
+   "v1": {
+    "value": "CORSIA label credits, moving to CCP label credits once the ICVCM Assessment Framework is implemented",
+    "spans": [
+     {
+      "version": "v1",
+      "doc_id": "vcmi-ccp-v1",
+      "page": 30,
+      "quote": "These shall be CORSIA label credits"
+     }
+    ]
+   },
+   "v2": {
+    "value": "CCP-Approved; interim: CORSIA eligible credits or existing contractually committed credits backed by due diligence against the 10 CCPs",
+    "spans": [
+     {
+      "version": "v2",
+      "doc_id": "vcmi-ccp-v2",
+      "page": 30,
+      "quote": "CORSIA eligible credits or existing contractually committed carbon credits supported by the company's due diligence process alignment to ICVCM's 10 CCPs, will be accepted as an interim measure"
+     }
+    ]
+   },
+   "v2.1": {
+    "value": "CCP-Approved; interim: CORSIA eligible credits or high quality credits backed by due diligence against the 10 CCPs",
+    "spans": [
+     {
+      "version": "v2.1",
+      "doc_id": "vcmi-ccp-v2.1",
+      "page": 31,
+      "quote": "CORSIA eligible credits or high quality credits supported by the company's due diligence process alignment to ICVCM's 10 CCPs, will be accepted as an interim measure"
+     }
+    ]
+   },
+   "v3.0": {
+    "value": "CCP-labelled credits or Article 6.4 credits (interim options until 1 January 2026)",
+    "spans": [
+     {
+      "version": "v3.0",
+      "doc_id": "vcmi-ccp-v3.0",
+      "page": 31,
+      "quote": "Companies shall retire ICVCM Core Carbon Principles-labelled credits or Article 6.4 credits issued under Article 6.4 methodologies approved by the Article 6.4 Supervisory Body when they become available."
+     }
+    ]
+   },
+   "v3.1": {
+    "value": "CCP-labelled or Article 6.4 credits; never credits from methodologies rejected or excluded in ICVCM assessments",
+    "spans": [
+     {
+      "version": "v3.1",
+      "doc_id": "vcmi-ccp-v3.1",
+      "page": 31,
+      "quote": "Companies shall retire ICVCM Core Carbon Principles-labelled credits or Article 6.4 credits issued under Article 6.4 methodologies approved by the Article 6.4 Supervisory Body when they become available."
+     },
+     {
+      "version": "v3.1",
+      "doc_id": "vcmi-ccp-v3.1",
+      "page": 32,
+      "quote": "companies shall not use credits from methodologies which have already been rejected or excluded by programs as part of the ICVCM assessments"
+     }
+    ]
+   },
+   "v3.2": {
+    "value": "CCP-labelled or Article 6.4 credits; never credits from methodologies rejected or excluded in ICVCM assessments",
+    "spans": [
+     {
+      "version": "v3.2",
+      "doc_id": "vcmi-ccp-v3.2",
+      "page": 31,
+      "quote": "Companies shall retire ICVCM Core Carbon Principles-labelled credits or Article 6.4 credits issued under Article 6.4 methodologies approved by the Article 6.4 Supervisory Body when they become available."
+     },
+     {
+      "version": "v3.2",
+      "doc_id": "vcmi-ccp-v3.2",
+      "page": 32,
+      "quote": "companies shall not use credits from methodologies which have already been rejected or excluded by programs as part of the ICVCM assessments"
+     }
+    ]
+   }
+  },
+  "notes": "v2 to v2.1 swaps 'existing contractually committed carbon credits' for 'high quality credits': a subtle change worth one question.",
+  "traps": []
+ },
+ {
+  "timeline_id": "T06",
+  "fact": "Article 6.4 credits accepted for claims",
+  "stem": "can Article 6.4 credits be used to make a claim",
+  "values": {
+   "v1": {
+    "value": null,
+    "absent": true,
+    "search": "Article 6\\.4 credits"
+   },
+   "v2": {
+    "value": null,
+    "absent": true,
+    "search": "Article 6\\.4 credits"
+   },
+   "v2.1": {
+    "value": null,
+    "absent": true,
+    "search": "Article 6\\.4 credits"
+   },
+   "v3.0": {
+    "value": "Yes, Article 6.4 credits issued under methodologies approved by the Article 6.4 Supervisory Body",
+    "spans": [
+     {
+      "version": "v3.0",
+      "doc_id": "vcmi-ccp-v3.0",
+      "page": 31,
+      "quote": "Article 6.4 credits issued under Article 6.4 methodologies approved by the Article 6.4 Supervisory Body"
+     }
+    ]
+   },
+   "v3.1": {
+    "value": "Yes, Article 6.4 credits issued under methodologies approved by the Article 6.4 Supervisory Body",
+    "spans": [
+     {
+      "version": "v3.1",
+      "doc_id": "vcmi-ccp-v3.1",
+      "page": 31,
+      "quote": "Article 6.4 credits issued under Article 6.4 methodologies approved by the Article 6.4 Supervisory Body"
+     }
+    ]
+   },
+   "v3.2": {
+    "value": "Yes, Article 6.4 credits issued under methodologies approved by the Article 6.4 Supervisory Body",
+    "spans": [
+     {
+      "version": "v3.2",
+      "doc_id": "vcmi-ccp-v3.2",
+      "page": 31,
+      "quote": "Article 6.4 credits issued under Article 6.4 methodologies approved by the Article 6.4 Supervisory Body"
+     }
+    ]
+   }
+  },
+  "notes": "",
+  "traps": []
+ },
+ {
+  "timeline_id": "T07",
+  "fact": "Whether VCMI is issuing claims",
+  "stem": "can companies obtain a VCMI claim",
+  "values": {
+   "v1": {
+    "value": "Not yet: claims available from November 2023, once the MRA Framework is in place",
+    "spans": [
+     {
+      "version": "v1",
+      "doc_id": "vcmi-ccp-v1",
+      "page": 9,
+      "quote": "From November, companies will be able to obtain VCMI Claims"
+     }
+    ]
+   },
+   "v2": {
+    "value": "Yes, companies are able to make Carbon Integrity Claims",
+    "spans": [
+     {
+      "version": "v2",
+      "doc_id": "vcmi-ccp-v2",
+      "page": 10,
+      "quote": "Companies are now able to make Carbon Integrity Claims"
+     }
+    ]
+   },
+   "v2.1": {
+    "value": "Yes, companies are able to make Carbon Integrity Claims",
+    "spans": [
+     {
+      "version": "v2.1",
+      "doc_id": "vcmi-ccp-v2.1",
+      "page": 11,
+      "quote": "Companies are now able to make Carbon Integrity Claims"
+     }
+    ]
+   },
+   "v3.0": {
+    "value": "Yes, companies are able to make Carbon Integrity Claims",
+    "spans": [
+     {
+      "version": "v3.0",
+      "doc_id": "vcmi-ccp-v3.0",
+      "page": 11,
+      "quote": "Companies are now able to make Carbon Integrity Claims"
+     }
+    ]
+   },
+   "v3.1": {
+    "value": "Yes, companies are able to make Carbon Integrity Claims",
+    "spans": [
+     {
+      "version": "v3.1",
+      "doc_id": "vcmi-ccp-v3.1",
+      "page": 11,
+      "quote": "Companies are now able to make Carbon Integrity Claims"
+     }
+    ]
+   },
+   "v3.2": {
+    "value": "No: as of 23 September 2026 VCMI is no longer issuing Carbon Integrity Claims",
+    "spans": [
+     {
+      "version": "v3.2",
+      "doc_id": "vcmi-ccp-v3.2",
+      "page": 1,
+      "quote": "As of 23 September 2026, VCMI is no longer issuing Carbon Integrity Claims"
+     },
+     {
+      "version": "v3.2",
+      "doc_id": "vcmi-ccp-v3.2",
+      "page": 6,
+      "quote": "Please note at this point in time VCMI is not issuing Carbon Integrity Claims."
+     }
+    ]
+   }
+  },
+  "notes": "",
+  "traps": [
+   {
+    "version": "v3.2",
+    "page": 14,
+    "quote": "Companies are now able to make a Carbon Integrity Claim",
+    "why": "Stale sentence left in Box 1 of v3.2; contradicts the cover and banners."
+   }
+  ]
+ },
+ {
+  "timeline_id": "T08",
+  "fact": "Target boundary and emissions coverage criteria",
+  "stem": "which criteria must companies follow for the target boundary and emissions coverage",
+  "values": {
+   "v1": {
+    "value": "SBTi criteria (95% of scopes 1-2, 67% of scope 3 if scope 3 > 40%)",
+    "spans": [
+     {
+      "version": "v1",
+      "doc_id": "vcmi-ccp-v1",
+      "page": 21,
+      "quote": "Companies must follow SBTi criteria for setting the target boundary and emissions coverage"
+     }
+    ]
+   },
+   "v2": {
+    "value": "The most up to date SBTi or equivalent criteria (95% / 67%)",
+    "spans": [
+     {
+      "version": "v2",
+      "doc_id": "vcmi-ccp-v2",
+      "page": 21,
+      "quote": "Companies must follow the most up to date SBTi or equivalent criteria for setting the target boundary and emissions coverage"
+     }
+    ]
+   },
+   "v2.1": {
+    "value": "The most up to date SBTi or equivalent criteria (95% / 67%)",
+    "spans": [
+     {
+      "version": "v2.1",
+      "doc_id": "vcmi-ccp-v2.1",
+      "page": 22,
+      "quote": "Companies must follow the most up to date SBTi or equivalent criteria for setting the target boundary and emissions coverage"
+     }
+    ]
+   },
+   "v3.0": {
+    "value": "The criteria of the chosen science-aligned target-setting framework",
+    "spans": [
+     {
+      "version": "v3.0",
+      "doc_id": "vcmi-ccp-v3.0",
+      "page": 22,
+      "quote": "Companies shall follow the criteria outlined in the chosen science-aligned target setting framework for setting the target boundary and emissions coverage"
+     }
+    ]
+   },
+   "v3.1": {
+    "value": "The criteria of the chosen science-aligned target-setting framework",
+    "spans": [
+     {
+      "version": "v3.1",
+      "doc_id": "vcmi-ccp-v3.1",
+      "page": 22,
+      "quote": "Companies shall follow the criteria outlined in the chosen science-aligned target setting framework for setting the target boundary and emissions coverage"
+     }
+    ]
+   },
+   "v3.2": {
+    "value": "The criteria of the chosen science-aligned target-setting framework",
+    "spans": [
+     {
+      "version": "v3.2",
+      "doc_id": "vcmi-ccp-v3.2",
+      "page": 22,
+      "quote": "Companies shall follow the criteria outlined in the chosen science-aligned target setting framework for setting the target boundary and emissions coverage"
+     }
+    ]
+   }
+  },
+  "notes": "",
+  "traps": []
+ },
+ {
+  "timeline_id": "T09",
+  "fact": "Organisational level at which targets are submitted",
+  "stem": "at what organisational level may companies submit their targets",
+  "values": {
+   "v1": {
+    "value": null,
+    "absent": true,
+    "search": "subsidiar"
+   },
+   "v2": {
+    "value": null,
+    "absent": true,
+    "search": "subsidiar"
+   },
+   "v2.1": {
+    "value": "Parent or group level only, not subsidiary level (SBTi boundary criteria)",
+    "spans": [
+     {
+      "version": "v2.1",
+      "doc_id": "vcmi-ccp-v2.1",
+      "page": 22,
+      "quote": "companies should submit targets only at the parent or group-level, not the subsidiary level"
+     }
+    ]
+   },
+   "v3.0": {
+    "value": "Parent or subsidiary level",
+    "spans": [
+     {
+      "version": "v3.0",
+      "doc_id": "vcmi-ccp-v3.0",
+      "page": 22,
+      "quote": "Companies can submit targets at the parent or subsidiary level."
+     }
+    ]
+   },
+   "v3.1": {
+    "value": "Parent or subsidiary level",
+    "spans": [
+     {
+      "version": "v3.1",
+      "doc_id": "vcmi-ccp-v3.1",
+      "page": 22,
+      "quote": "Companies can submit targets at the parent or subsidiary level."
+     }
+    ]
+   },
+   "v3.2": {
+    "value": "Parent or subsidiary level",
+    "spans": [
+     {
+      "version": "v3.2",
+      "doc_id": "vcmi-ccp-v3.2",
+      "page": 22,
+      "quote": "Companies can submit targets at the parent or subsidiary level."
+     }
+    ]
+   }
+  },
+  "notes": "",
+  "traps": []
+ },
+ {
+  "timeline_id": "T10",
+  "fact": "Deadline to submit unvalidated targets to SBTi",
+  "stem": "within what period must companies submit unvalidated targets to SBTi for validation",
+  "values": {
+   "v1": {
+    "value": null,
+    "absent": true,
+    "search": "submit a target to SBTi for validation",
+    "absent_note": "v1 required validated targets outright (see T11). Do not confuse with v1's separate 24-month rule for long-term targets."
+   },
+   "v2": {
+    "value": "Within 24 months",
+    "spans": [
+     {
+      "version": "v2",
+      "doc_id": "vcmi-ccp-v2",
+      "page": 21,
+      "quote": "they must submit a target to SBTi for validation within 24 months"
+     }
+    ]
+   },
+   "v2.1": {
+    "value": "Within 24 months",
+    "spans": [
+     {
+      "version": "v2.1",
+      "doc_id": "vcmi-ccp-v2.1",
+      "page": 22,
+      "quote": "they must submit a target to SBTi for validation within 24 months"
+     }
+    ]
+   },
+   "v3.0": {
+    "value": null,
+    "absent": true,
+    "search": "submit a target to SBTi for validation"
+   },
+   "v3.1": {
+    "value": null,
+    "absent": true,
+    "search": "submit a target to SBTi for validation"
+   },
+   "v3.2": {
+    "value": null,
+    "absent": true,
+    "search": "submit a target to SBTi for validation"
+   }
+  },
+  "notes": "Removed in v3.0 along with the SBTi-only requirement.",
+  "traps": [
+   {
+    "version": "v1",
+    "page": 21,
+    "quote": "within 24 months of obtaining a VCMI Claim",
+    "why": "A different 24-month rule (long-term net-zero target), present v1-v2.1."
+   }
+  ]
+ },
+ {
+  "timeline_id": "T11",
+  "fact": "Foundational Criterion 2: type of near-term targets",
+  "stem": "what kind of near-term targets does Foundational Criterion 2 require",
+  "values": {
+   "v1": {
+    "value": "Validated science-based near-term targets",
+    "spans": [
+     {
+      "version": "v1",
+      "doc_id": "vcmi-ccp-v1",
+      "page": 20,
+      "quote": "Set and publicly disclose validated science-based near-term emissions reduction targets"
+     }
+    ]
+   },
+   "v2": {
+    "value": "Science-aligned near-term targets (no validation required)",
+    "spans": [
+     {
+      "version": "v2",
+      "doc_id": "vcmi-ccp-v2",
+      "page": 6,
+      "quote": "set and publicly disclose science-aligned near-term emission reduction targets"
+     }
+    ]
+   },
+   "v2.1": {
+    "value": "Science-aligned near-term targets (no validation required)",
+    "spans": [
+     {
+      "version": "v2.1",
+      "doc_id": "vcmi-ccp-v2.1",
+      "page": 7,
+      "quote": "set and publicly disclose science-aligned near-term emission reduction targets"
+     }
+    ]
+   },
+   "v3.0": {
+    "value": "Science-aligned near-term targets (no validation required)",
+    "spans": [
+     {
+      "version": "v3.0",
+      "doc_id": "vcmi-ccp-v3.0",
+      "page": 7,
+      "quote": "set and publicly disclose science-aligned near-term emission reduction targets"
+     }
+    ]
+   },
+   "v3.1": {
+    "value": "Science-aligned near-term targets (no validation required)",
+    "spans": [
+     {
+      "version": "v3.1",
+      "doc_id": "vcmi-ccp-v3.1",
+      "page": 7,
+      "quote": "set and publicly disclose science-aligned near-term emission reduction targets"
+     }
+    ]
+   },
+   "v3.2": {
+    "value": "Science-aligned near-term targets (no validation required)",
+    "spans": [
+     {
+      "version": "v3.2",
+      "doc_id": "vcmi-ccp-v3.2",
+      "page": 7,
+      "quote": "set and publicly disclose science-aligned near-term emission reduction targets"
+     }
+    ]
+   }
+  },
+  "notes": "",
+  "traps": []
+ },
+ {
+  "timeline_id": "T12",
+  "fact": "Foundational Criterion 3",
+  "stem": "what does Foundational Criterion 3 require companies to demonstrate",
+  "values": {
+   "v1": {
+    "value": "Being on track towards a near-term target and minimising cumulative emissions",
+    "spans": [
+     {
+      "version": "v1",
+      "doc_id": "vcmi-ccp-v1",
+      "page": 22,
+      "quote": "towards meeting a near-term emissions reduction target and minimizing cumulative emissions over the target period"
+     }
+    ]
+   },
+   "v2": {
+    "value": "Making progress on financial allocation, governance and strategy towards the near-term target",
+    "spans": [
+     {
+      "version": "v2",
+      "doc_id": "vcmi-ccp-v2",
+      "page": 22,
+      "quote": "Demonstrate that the company is making progress on financial allocation, governance, and strategy towards meeting its near-term"
+     }
+    ]
+   },
+   "v2.1": {
+    "value": "Making progress on financial allocation, governance and strategy towards the near-term target",
+    "spans": [
+     {
+      "version": "v2.1",
+      "doc_id": "vcmi-ccp-v2.1",
+      "page": 23,
+      "quote": "Demonstrate that the company is making progress on financial allocation, governance, and strategy towards meeting its near-term"
+     }
+    ]
+   },
+   "v3.0": {
+    "value": "Making progress on financial allocation, governance and strategy towards the near-term target",
+    "spans": [
+     {
+      "version": "v3.0",
+      "doc_id": "vcmi-ccp-v3.0",
+      "page": 23,
+      "quote": "Demonstrate that the company is making progress on financial allocation, governance, and strategy towards meeting its near-term"
+     }
+    ]
+   },
+   "v3.1": {
+    "value": "Making progress on financial allocation, governance and strategy towards the near-term target",
+    "spans": [
+     {
+      "version": "v3.1",
+      "doc_id": "vcmi-ccp-v3.1",
+      "page": 23,
+      "quote": "Demonstrate that the company is making progress on financial allocation, governance, and strategy towards meeting its near-term"
+     }
+    ]
+   },
+   "v3.2": {
+    "value": "Making progress on financial allocation, governance and strategy towards the near-term target",
+    "spans": [
+     {
+      "version": "v3.2",
+      "doc_id": "vcmi-ccp-v3.2",
+      "page": 23,
+      "quote": "Demonstrate that the company is making progress on financial allocation, governance, and strategy towards meeting its near-term"
+     }
+    ]
+   }
+  },
+  "notes": "",
+  "traps": []
+ },
+ {
+  "timeline_id": "T13",
+  "fact": "Public net-zero-by-2050 commitment",
+  "stem": "is a public commitment to reach net zero by 2050 required",
+  "values": {
+   "v1": {
+    "value": "Required",
+    "spans": [
+     {
+      "version": "v1",
+      "doc_id": "vcmi-ccp-v1",
+      "page": 21,
+      "quote": "Make a public commitment to achieve net zero emissions no later than 2050"
+     }
+    ]
+   },
+   "v2": {
+    "value": "Required",
+    "spans": [
+     {
+      "version": "v2",
+      "doc_id": "vcmi-ccp-v2",
+      "page": 21,
+      "quote": "Make a public commitment to achieve net-zero emissions no later than 2050"
+     }
+    ]
+   },
+   "v2.1": {
+    "value": "Required",
+    "spans": [
+     {
+      "version": "v2.1",
+      "doc_id": "vcmi-ccp-v2.1",
+      "page": 22,
+      "quote": "Make a public commitment to achieve net-zero emissions no later than 2050"
+     }
+    ]
+   },
+   "v3.0": {
+    "value": "Encouraged, not required (moved to Recommendations)",
+    "spans": [
+     {
+      "version": "v3.0",
+      "doc_id": "vcmi-ccp-v3.0",
+      "page": 23,
+      "quote": "Companies are encouraged to make a public commitment to achieve net-zero emissions no later than 2050"
+     }
+    ]
+   },
+   "v3.1": {
+    "value": "Encouraged, not required (moved to Recommendations)",
+    "spans": [
+     {
+      "version": "v3.1",
+      "doc_id": "vcmi-ccp-v3.1",
+      "page": 23,
+      "quote": "Companies are encouraged to make a public commitment to achieve net-zero emissions no later than 2050"
+     }
+    ]
+   },
+   "v3.2": {
+    "value": "Encouraged, not required (moved to Recommendations)",
+    "spans": [
+     {
+      "version": "v3.2",
+      "doc_id": "vcmi-ccp-v3.2",
+      "page": 23,
+      "quote": "Companies are encouraged to make a public commitment to achieve net-zero emissions no later than 2050"
+     }
+    ]
+   }
+  },
+  "notes": "",
+  "traps": []
+ },
+ {
+  "timeline_id": "T14",
+  "fact": "SBTi commitment letter as evidence",
+  "stem": "must companies provide an SBTi commitment letter as evidence",
+  "values": {
+   "v1": {
+    "value": null,
+    "absent": true,
+    "search": "SBTi commitment letter"
+   },
+   "v2": {
+    "value": "Required",
+    "spans": [
+     {
+      "version": "v2",
+      "doc_id": "vcmi-ccp-v2",
+      "page": 21,
+      "quote": "the company must provide evidence of the SBTi commitment letter"
+     }
+    ]
+   },
+   "v2.1": {
+    "value": "Required",
+    "spans": [
+     {
+      "version": "v2.1",
+      "doc_id": "vcmi-ccp-v2.1",
+      "page": 22,
+      "quote": "the company must provide evidence of the SBTi commitment letter"
+     }
+    ]
+   },
+   "v3.0": {
+    "value": null,
+    "absent": true,
+    "search": "SBTi commitment letter"
+   },
+   "v3.1": {
+    "value": null,
+    "absent": true,
+    "search": "SBTi commitment letter"
+   },
+   "v3.2": {
+    "value": null,
+    "absent": true,
+    "search": "SBTi commitment letter"
+   }
+  },
+  "notes": "",
+  "traps": []
+ },
+ {
+  "timeline_id": "T15",
+  "fact": "Third-party assurance of scope 1 and 2 emissions",
+  "stem": "is third-party assurance of scope 1 and 2 emissions required",
+  "values": {
+   "v1": {
+    "value": null,
+    "absent": true,
+    "search": "limited assurance of scope 1 and scope 2"
+   },
+   "v2": {
+    "value": null,
+    "absent": true,
+    "search": "limited assurance of scope 1 and scope 2"
+   },
+   "v2.1": {
+    "value": null,
+    "absent": true,
+    "search": "limited assurance of scope 1 and scope 2"
+   },
+   "v3.0": {
+    "value": "Required: limited assurance for base year and most recent reporting year",
+    "spans": [
+     {
+      "version": "v3.0",
+      "doc_id": "vcmi-ccp-v3.0",
+      "page": 21,
+      "quote": "Obtain third-party, limited assurance of scope 1 and scope 2 emissions for base year and most recent reporting year."
+     }
+    ]
+   },
+   "v3.1": {
+    "value": "Required: limited assurance for base year and most recent reporting year",
+    "spans": [
+     {
+      "version": "v3.1",
+      "doc_id": "vcmi-ccp-v3.1",
+      "page": 21,
+      "quote": "Obtain third-party, limited assurance of scope 1 and scope 2 emissions for base year and most recent reporting year."
+     }
+    ]
+   },
+   "v3.2": {
+    "value": "Required: limited assurance for base year and most recent reporting year",
+    "spans": [
+     {
+      "version": "v3.2",
+      "doc_id": "vcmi-ccp-v3.2",
+      "page": 21,
+      "quote": "Obtain third-party, limited assurance of scope 1 and scope 2 emissions for base year and most recent reporting year."
+     }
+    ]
+   }
+  },
+  "notes": "",
+  "traps": []
+ },
+ {
+  "timeline_id": "T16",
+  "fact": "Most recent reporting year vs base year",
+  "stem": "can the most recent reporting year be the same as the base year",
+  "values": {
+   "v1": {
+    "value": null,
+    "absent": true,
+    "search": "cannot be the same as the base year"
+   },
+   "v2": {
+    "value": null,
+    "absent": true,
+    "search": "cannot be the same as the base year"
+   },
+   "v2.1": {
+    "value": null,
+    "absent": true,
+    "search": "cannot be the same as the base year"
+   },
+   "v3.0": {
+    "value": null,
+    "absent": true,
+    "search": "cannot be the same as the base year"
+   },
+   "v3.1": {
+    "value": "It cannot be the same year",
+    "spans": [
+     {
+      "version": "v3.1",
+      "doc_id": "vcmi-ccp-v3.1",
+      "page": 27,
+      "quote": "Note that the most recent reporting year cannot be the same as the base year."
+     }
+    ]
+   },
+   "v3.2": {
+    "value": "It cannot be the same year",
+    "spans": [
+     {
+      "version": "v3.2",
+      "doc_id": "vcmi-ccp-v3.2",
+      "page": 27,
+      "quote": "Note that the most recent reporting year cannot be the same as the base year."
+     }
+    ]
+   }
+  },
+  "notes": "",
+  "traps": []
+ },
+ {
+  "timeline_id": "T17",
+  "fact": "Step 4 obligation wording",
+  "stem": "must claimants ('shall') or should they demonstrate compliance in Step 4",
+  "values": {
+   "v1": {
+    "value": null,
+    "absent": true,
+    "search": "claimants (shall|should) demonstrate"
+   },
+   "v2": {
+    "value": null,
+    "absent": true,
+    "search": "claimants (shall|should) demonstrate"
+   },
+   "v2.1": {
+    "value": null,
+    "absent": true,
+    "search": "claimants (shall|should) demonstrate"
+   },
+   "v3.0": {
+    "value": "shall (mandatory)",
+    "spans": [
+     {
+      "version": "v3.0",
+      "doc_id": "vcmi-ccp-v3.0",
+      "page": 9,
+      "quote": "Claimants shall demonstrate that all Foundational Criteria and Carbon Integrity"
+     }
+    ]
+   },
+   "v3.1": {
+    "value": "shall (mandatory)",
+    "spans": [
+     {
+      "version": "v3.1",
+      "doc_id": "vcmi-ccp-v3.1",
+      "page": 9,
+      "quote": "Claimants shall demonstrate that all Foundational Criteria and Carbon Integrity"
+     }
+    ]
+   },
+   "v3.2": {
+    "value": "should (advisory, as claims are no longer issued)",
+    "spans": [
+     {
+      "version": "v3.2",
+      "doc_id": "vcmi-ccp-v3.2",
+      "page": 9,
+      "quote": "claimants should demonstrate that all Foundational Criteria and Carbon Integrity"
+     }
+    ]
+   }
+  },
+  "notes": "",
+  "traps": []
+ },
+ {
+  "timeline_id": "T18",
+  "fact": "Signatories of the letter in the Claims Code",
+  "stem": "who signed the letter from VCMI's leadership",
+  "values": {
+   "v1": {
+    "value": "Tariye Gbadegesin and Rachel Kyte, Steering Committee Co-Chairs",
+    "spans": [
+     {
+      "version": "v1",
+      "doc_id": "vcmi-ccp-v1",
+      "page": 9,
+      "quote": "Tariye Gbadegesin and Rachel Kyte VCMI STEERING COMMITTEE CO-CHAIRS"
+     }
+    ]
+   },
+   "v2": {
+    "value": "Tariye Gbadegesin and Rachel Kyte, Steering Committee Co-Chairs",
+    "spans": [
+     {
+      "version": "v2",
+      "doc_id": "vcmi-ccp-v2",
+      "page": 10,
+      "quote": "Tariye Gbadegesin and Rachel Kyte VCMI STEERING COMMITTEE CO-CHAIRS"
+     }
+    ]
+   },
+   "v2.1": {
+    "value": "Tariye Gbadegesin and Rachel Kyte, Steering Committee Co-Chairs",
+    "spans": [
+     {
+      "version": "v2.1",
+      "doc_id": "vcmi-ccp-v2.1",
+      "page": 11,
+      "quote": "Tariye Gbadegesin and Rachel Kyte VCMI STEERING COMMITTEE CO-CHAIRS"
+     }
+    ]
+   },
+   "v3.0": {
+    "value": "Tariye Gbadegesin and Rachel Kyte, Steering Committee Co-Chairs",
+    "spans": [
+     {
+      "version": "v3.0",
+      "doc_id": "vcmi-ccp-v3.0",
+      "page": 11,
+      "quote": "Tariye Gbadegesin and Rachel Kyte VCMI STEERING COMMITTEE CO-CHAIRS"
+     }
+    ]
+   },
+   "v3.1": {
+    "value": "Tariye Gbadegesin and Rachel Kyte, Steering Committee Co-Chairs",
+    "spans": [
+     {
+      "version": "v3.1",
+      "doc_id": "vcmi-ccp-v3.1",
+      "page": 11,
+      "quote": "Tariye Gbadegesin and Rachel Kyte VCMI STEERING COMMITTEE CO-CHAIRS"
+     }
+    ]
+   },
+   "v3.2": {
+    "value": "Usha Rao-Monari, Steering Committee Chair",
+    "spans": [
+     {
+      "version": "v3.2",
+      "doc_id": "vcmi-ccp-v3.2",
+      "page": 11,
+      "quote": "Usha Rao-Monari VCMI STEERING COMMITTEE CHAIR"
+     }
+    ]
+   }
+  },
+  "notes": "",
+  "traps": [
+   {
+    "version": "v3.2",
+    "page": 45,
+    "quote": "The Steering Committee, co-chaired by Rachel Kyte and Tariye Gbadegesin",
+    "why": "Acknowledgements in v3.2 still name the former co-chairs."
+   }
+  ]
+ },
+ {
+  "timeline_id": "T19",
+  "fact": "Disclosure by companies not doing policy advocacy",
+  "stem": "what must companies that do no climate policy advocacy disclose",
+  "values": {
+   "v1": {
+    "value": null,
+    "absent": true,
+    "search": "publicly disclose that they do not engage"
+   },
+   "v2": {
+    "value": "They shall publicly disclose that they do not engage in such activities",
+    "spans": [
+     {
+      "version": "v2",
+      "doc_id": "vcmi-ccp-v2",
+      "page": 24,
+      "quote": "they shall publicly disclose that they do not engage in any activities"
+     }
+    ]
+   },
+   "v2.1": {
+    "value": "They shall publicly disclose that they do not engage in such activities",
+    "spans": [
+     {
+      "version": "v2.1",
+      "doc_id": "vcmi-ccp-v2.1",
+      "page": 25,
+      "quote": "they shall publicly disclose that they do not engage in any activities"
+     }
+    ]
+   },
+   "v3.0": {
+    "value": "They shall publicly disclose that they do not engage in such activities",
+    "spans": [
+     {
+      "version": "v3.0",
+      "doc_id": "vcmi-ccp-v3.0",
+      "page": 26,
+      "quote": "they shall publicly disclose that they do not engage in any activities"
+     }
+    ]
+   },
+   "v3.1": {
+    "value": "They shall publicly disclose that they do not engage in such activities",
+    "spans": [
+     {
+      "version": "v3.1",
+      "doc_id": "vcmi-ccp-v3.1",
+      "page": 26,
+      "quote": "they shall publicly disclose that they do not engage in any activities"
+     }
+    ]
+   },
+   "v3.2": {
+    "value": "They shall publicly disclose that they do not engage in such activities",
+    "spans": [
+     {
+      "version": "v3.2",
+      "doc_id": "vcmi-ccp-v3.2",
+      "page": 26,
+      "quote": "they shall publicly disclose that they do not engage in any activities"
+     }
+    ]
+   }
+  },
+  "notes": "",
+  "traps": []
+ }
+]

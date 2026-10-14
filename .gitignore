@@ -1,0 +1,20 @@
+# Source PDFs are not redistributed: download them from the URLs in data/manifest.csv
+data/raw/
+
+# API response cache and old copies
+eval/runs/cache.sqlite
+eval/runs_backup/
+*.sqlite
+
+# Secrets
+.env
+.streamlit/secrets.toml
+
+# Python and OS clutter
+__pycache__/
+*.pyc
+.venv/
+venv/
+desktop.ini
+Thumbs.db
+.DS_Store
