@@ -2,7 +2,8 @@
 
 **Question answering over the six versions of the VCMI Claims Code of Practice (2023–2026) that answers from the version in force on the date you ask about, cites the page, and says so when the documents do not contain the answer.**
 
-▶ **Live demo:** https://vcmi-versioned-rag-nmhd2vuexbjtktaix56hr8.streamlit.app · type a question, move the date slider, watch the answer change when the rules did.
+▶ **Live demo:**(Hosted on a free tier: if it shows ‘gone to sleep’, click the button and wait about 30 seconds.) https://vcmi-versioned-rag-nmhd2vuexbjtktaix56hr8.streamlit.app · 
+type a question, move the date slider, watch the answer change when the rules did.
 
 ---
 
