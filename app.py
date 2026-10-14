@@ -103,7 +103,7 @@ header[data-testid="stHeader"] {{background:transparent}}
 .st-key-dpick {{max-width:180px}}
 .st-key-dpick [data-testid="stDateInputField"], .st-key-dpick div[data-baseweb="input"] {{background:#fff; border-color:#BDB6A6}}
 .st-key-dpick [data-testid="stDateInputField"] *, .st-key-dpick input {{font-family:'Newsreader', serif; font-size:18px; color:{INK}}}
-.stApp .dlabel {{font-size:13px; font-weight:600; margin:0 0 8px}}
+.stApp .dlabel {{font-size:13px; font-weight:600; margin:0 0 10px; line-height:1.4}}
 .stApp .dlabel span {{font-weight:400; color:{MUTED}}}
 /* Ask button */
 .st-key-ask button {{height:52px; width:100%; background:{ACCENT}; color:#fff; border:none; border-radius:4px; font-weight:600; font-size:16px}}
@@ -124,17 +124,19 @@ header[data-testid="stHeader"] {{background:transparent}}
 .quote .src a, .card a {{color:{ACCENT}}}
 .note {{font-size:15px; color:#46423B; border-left:2px solid {ACCENT}; padding:4px 0 4px 12px; margin:20px 0 0}}
 /* timeline */
-.ruler {{position:relative; height:36px; margin:10px 10px 0}}
+.ruler {{position:relative; height:34px; margin:6px 0 0}}
 .mk {{position:absolute; top:0; display:flex; flex-direction:column; gap:1px; font-size:11.5px; line-height:1.2; padding-left:6px; border-left:1px solid #BDB6A6; white-space:nowrap}}
 .mk span:first-child {{font-weight:600}} .mk span:last-child {{color:{MUTED}}}
 .mk.right {{padding-left:0; padding-right:6px; border-left:none; border-right:1px solid #BDB6A6; text-align:right; transform:translateX(-100%)}}
 .mk.on {{border-color:{ACCENT}; border-width:2px; color:{ACCENT}}} .mk.on span:last-child {{color:{ACCENT}}}
 .years {{position:relative; height:16px; font-size:11px; color:{MUTED}; margin:0 10px}}
 .years span {{position:absolute}}
-[data-testid="stSliderThumbValue"], [data-testid="stSliderTickBarMin"], [data-testid="stSliderTickBarMax"] {{display:none}}
-.inforce {{font-size:13px; color:{MUTED}; padding-top:10px; line-height:1.5}}
+[data-testid="stSliderThumbValue"], [data-testid="stSliderTickBar"], [data-testid^="stSliderTickBar"] {{display:none}}
+.inforce {{font-size:13px; color:{MUTED}; padding:0; margin:0; line-height:1.5}}
+[data-testid="stMarkdownContainer"]:has(> .inforce), [data-testid="stMarkdownContainer"]:has(> .ruler) {{margin-bottom:0 !important}}
+.st-key-datebox [data-testid="stSlider"] {{margin-top:-10px}}
 .inforce a {{color:{ACCENT}}}
-.st-key-datebox {{border:1px solid {LINE}; border-radius:6px; background:rgba(255,255,255,.55); padding:14px 18px 8px; margin-top:6px; gap:.35rem}}
+.st-key-datebox {{border:1px solid {LINE}; border-radius:6px; background:rgba(255,255,255,.55); padding:16px 18px 8px; margin-top:6px; gap:.6rem}}
 .foot {{font-size:13px; line-height:1.6; color:{MUTED}; border-top:1px solid {LINE}; padding-top:20px; margin-top:32px}}
 @media (max-width: 640px) {{
   .stApp .hero h1 {{font-size:38px}} .card {{padding:24px 20px}} .stApp .answer {{font-size:22px}}
@@ -246,7 +248,6 @@ with st.container(key="datebox"):
     st.markdown(ruler, unsafe_allow_html=True)
     st.slider("Date slider", min_value=start, max_value=today, key="d", format="D MMM YYYY",
               label_visibility="collapsed", on_change=on_slider)
-    st.markdown(years, unsafe_allow_html=True)
 
 p = asof.plan(question, d, versions) if question.strip() else None
 answer_box = st.container()
