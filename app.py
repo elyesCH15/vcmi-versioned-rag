@@ -81,69 +81,73 @@ def ask_model(system, user, model):
     return parse(resp.choices[0].message.content)
 
 
-# ------------------------------------------------------------------ look ("Archive" design)
-PAPER, INK, MUTED, LINE, ACCENT = "#F6F4EE", "#1C1B19", "#5E5A52", "#D9D4C7", "#1F5C46"
+# ------------------------------------------------------------------ look (palette and type inspired by sotoraglobal.com)
+# deep teal, cream, warm off-white, orange accent; Open Sans throughout
+PAPER, CREAM, TEAL, INK, MUTED, LINE = "#FFFFF2", "#FFF6D5", "#012626", "#012626", "#4D6464", "#E4DDC0"
+ORANGE, ORANGE_DARK = "#FF8749", "#B4501C"   # bright orange on teal / large marks; darker orange for small text on light
 CSS = f"""
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Work+Sans:wght@400;500;600&display=swap');
-html, body, .stApp, [data-testid="stAppViewContainer"] {{background:{PAPER}; color:{INK}; font-family:'Work Sans', sans-serif}}
-.stApp p, .stApp label, .stApp input, .stApp button {{font-family:'Work Sans', sans-serif}}
-header[data-testid="stHeader"] {{background:transparent}}
-.block-container {{max-width:1040px; padding-top:3.5rem; padding-bottom:3rem}}
-.serif {{font-family:'Newsreader', serif}}
-.kicker {{font-size:13px; letter-spacing:.12em; text-transform:uppercase; color:{MUTED}}}
-.hero h1 {{font-family:'Newsreader', serif; font-weight:500; font-size:52px; line-height:1.05; letter-spacing:-.01em; margin:14px 0 14px; padding:0; color:{INK}}}
-.stApp .hero p {{font-size:17px; line-height:1.55; color:#46423B; max-width:640px; margin:0}}
-.hero {{border-bottom:1px solid {LINE}; padding-bottom:28px; margin-bottom:28px}}
-.qlabel {{font-size:14px; font-weight:600; margin:0 0 6px}}
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&display=swap');
+html, body, .stApp, [data-testid="stAppViewContainer"] {{background:{PAPER}; color:{INK}; font-family:'Open Sans', sans-serif}}
+.stApp p, .stApp label, .stApp input, .stApp button {{font-family:'Open Sans', sans-serif}}
+header[data-testid="stHeader"] {{background:{TEAL}}}
+header[data-testid="stHeader"] * {{color:{CREAM}}}
+.block-container {{max-width:1040px; padding-top:0; padding-bottom:3rem}}
+/* hero: full-width deep-teal band */
+.hero {{background:{TEAL}; color:{CREAM}; margin:0 calc(50% - 50vw) 36px; padding:72px calc(50vw - 50%) 56px}}
+.kicker {{font-size:13px; letter-spacing:.12em; text-transform:uppercase; color:{ORANGE}; font-weight:600}}
+.stApp .hero h1 {{font-family:'Open Sans', sans-serif; font-weight:300; font-size:46px; line-height:1.15; margin:16px 0 18px; padding:0; color:{CREAM}}}
+.stApp .hero p {{font-size:17px; font-weight:300; line-height:1.6; color:{CREAM}; max-width:660px; margin:0}}
+.qlabel {{font-size:14px; font-weight:600; margin:0 0 6px; color:{INK}}}
 /* question box */
 .st-key-q input {{height:52px; font-size:17px; background:#fff; color:{INK}; border-radius:4px}}
-.st-key-q div[data-baseweb="input"] {{height:52px; border:1px solid #BDB6A6; border-radius:4px; background:#fff}}
-/* date field: compact, serif (works for both the older and the newer Streamlit date widget) */
+.st-key-q div[data-baseweb="input"] {{height:52px; border:1px solid #C9C2A6; border-radius:4px; background:#fff}}
+.st-key-q input {{min-height:50px}}
+/* date field */
 .st-key-dpick {{max-width:180px}}
-.st-key-dpick [data-testid="stDateInputField"], .st-key-dpick div[data-baseweb="input"] {{background:#fff; border-color:#BDB6A6}}
-.st-key-dpick [data-testid="stDateInputField"] *, .st-key-dpick input {{font-family:'Newsreader', serif; font-size:18px; color:{INK}}}
-.stApp .dlabel {{font-size:13px; font-weight:600; margin:0 0 10px; line-height:1.4}}
+.st-key-dpick [data-testid="stDateInputField"], .st-key-dpick div[data-baseweb="input"] {{background:#fff; border-color:#C9C2A6}}
+.st-key-dpick [data-testid="stDateInputField"] *, .st-key-dpick input {{font-family:'Open Sans', sans-serif; font-size:17px; color:{INK}}}
+.stApp .dlabel {{font-size:13px; font-weight:600; margin:0 0 10px; line-height:1.4; color:{INK}}}
 .stApp .dlabel span {{font-weight:400; color:{MUTED}}}
-/* Ask button */
-.st-key-ask button {{height:52px; width:100%; background:{ACCENT}; color:#fff; border:none; border-radius:4px; font-weight:600; font-size:16px}}
-.st-key-ask button:hover {{background:#174A38; color:#fff}}
-/* example chips */
-[class*="st-key-chip_"] button {{min-height:44px; background:transparent; border:1px solid #BDB6A6; border-radius:999px; color:{INK}; font-size:14px; padding:0 16px}}
-[class*="st-key-chip_"] button:hover {{border-color:{ACCENT}; color:{ACCENT}}}
+/* Ask button: solid orange, teal text */
+.st-key-ask button {{height:52px; width:100%; background:{ORANGE}; color:{TEAL}; border:1px solid {ORANGE}; border-radius:4px; font-weight:600; font-size:16px}}
+.st-key-ask button:hover {{background:#FF9A66; border-color:#FF9A66; color:{TEAL}}}
+/* example chips: outlined, like the site's buttons */
+[class*="st-key-chip_"] button {{min-height:44px; background:transparent; border:1px solid {TEAL}; border-radius:4px; color:{TEAL}; font-size:14px; padding:0 16px}}
+[class*="st-key-chip_"] button p {{white-space:nowrap}}
+[class*="st-key-chip_"] button:hover {{border-color:{ORANGE_DARK}; color:{ORANGE_DARK}}}
 .try {{font-size:14px; color:{MUTED}; padding-top:11px}}
 /* answer card */
 .card {{background:#fff; border:1px solid {LINE}; border-radius:6px; padding:36px 40px; margin:28px 0 8px}}
 .meta {{font-size:14px; color:{MUTED}; display:flex; gap:12px; flex-wrap:wrap; align-items:baseline}}
-.meta b {{color:{ACCENT}; font-weight:600}}
-.meta.declined b {{color:#8A4B12}}
-.stApp .answer {{font-family:'Newsreader', serif; font-size:26px; line-height:1.38; margin:20px 0 0; color:{INK}}}
-.quote {{border-top:1px solid #E6E1D5; margin-top:22px; padding-top:18px}}
-.stApp .quote p {{font-family:'Newsreader', serif; font-style:italic; font-size:17px; line-height:1.6; color:#46423B; margin:0}}
+.meta b {{color:{ORANGE_DARK}; font-weight:600}}
+.meta.declined b {{color:#8A3A12}}
+.stApp .answer {{font-family:'Open Sans', sans-serif; font-weight:300; font-size:25px; line-height:1.45; margin:18px 0 0; color:{INK}}}
+.quote {{background:{CREAM}; border-radius:4px; margin-top:20px; padding:18px 22px}}
+.stApp .quote p {{font-style:italic; font-weight:400; font-size:15.5px; line-height:1.65; color:#2A4242; margin:0}}
 .quote .src {{font-size:13px; color:{MUTED}; margin-top:8px}}
-.quote .src a, .card a {{color:{ACCENT}}}
-.note {{font-size:15px; color:#46423B; border-left:2px solid {ACCENT}; padding:4px 0 4px 12px; margin:20px 0 0}}
-/* timeline */
+.quote .src a, .card a {{color:{ORANGE_DARK}}}
+.note {{font-size:15px; color:#2A4242; border-left:3px solid {ORANGE}; padding:4px 0 4px 12px; margin:20px 0 0}}
+/* date box and timeline */
+.st-key-datebox {{border:1px solid {LINE}; border-radius:6px; background:{CREAM}; padding:16px 18px 8px; margin-top:6px; gap:.6rem}}
 .ruler {{position:relative; height:34px; margin:6px 0 0}}
-.mk {{position:absolute; top:0; display:flex; flex-direction:column; gap:1px; font-size:11.5px; line-height:1.2; padding-left:6px; border-left:1px solid #BDB6A6; white-space:nowrap}}
+.mk {{position:absolute; top:0; display:flex; flex-direction:column; gap:1px; font-size:11.5px; line-height:1.2; padding-left:6px; border-left:1px solid #B9B297; white-space:nowrap; color:{INK}}}
 .mk span:first-child {{font-weight:600}} .mk span:last-child {{color:{MUTED}}}
-.mk.right {{padding-left:0; padding-right:6px; border-left:none; border-right:1px solid #BDB6A6; text-align:right; transform:translateX(-100%)}}
-.mk.on {{border-color:{ACCENT}; border-width:2px; color:{ACCENT}}} .mk.on span:last-child {{color:{ACCENT}}}
-.years {{position:relative; height:16px; font-size:11px; color:{MUTED}; margin:0 10px}}
-.years span {{position:absolute}}
+.mk.right {{padding-left:0; padding-right:6px; border-left:none; border-right:1px solid #B9B297; text-align:right; transform:translateX(-100%)}}
+.mk.on {{border-color:{ORANGE}; border-width:3px; color:{INK}}} .mk.on span:last-child {{color:{ORANGE_DARK}; font-weight:600}}
 [data-testid="stSliderThumbValue"], [data-testid="stSliderTickBar"], [data-testid^="stSliderTickBar"] {{display:none}}
 .inforce {{font-size:13px; color:{MUTED}; padding:0; margin:0; line-height:1.5}}
+.inforce b {{color:{INK}}}
+.inforce a {{color:{ORANGE_DARK}}}
 [data-testid="stMarkdownContainer"]:has(> .inforce), [data-testid="stMarkdownContainer"]:has(> .ruler) {{margin-bottom:0 !important}}
 .st-key-datebox [data-testid="stSlider"] {{margin-top:-10px}}
-.inforce a {{color:{ACCENT}}}
-.st-key-datebox {{border:1px solid {LINE}; border-radius:6px; background:rgba(255,255,255,.55); padding:16px 18px 8px; margin-top:6px; gap:.6rem}}
-.foot {{font-size:13px; line-height:1.6; color:{MUTED}; border-top:1px solid {LINE}; padding-top:20px; margin-top:32px}}
+/* footer: teal band */
+.foot {{background:{TEAL}; color:{CREAM}; font-size:13px; line-height:1.6; margin:40px calc(50% - 50vw) -3rem; padding:28px calc(50vw - 50%)}}
+[data-testid="stExpander"] details {{background:transparent; border:1px solid {LINE}; border-radius:6px}}
 @media (max-width: 640px) {{
-  .stApp .hero h1 {{font-size:38px}} .card {{padding:24px 20px}} .stApp .answer {{font-size:22px}}
+  .stApp .hero h1 {{font-size:32px}} .hero {{padding-top:56px}} .card {{padding:24px 20px}} .stApp .answer {{font-size:21px}}
   .mk:not(.on) span {{visibility:hidden}} .mk {{font-size:12px}}
 }}
-.st-key-q input {{min-height:50px}}
-[data-testid="stExpander"] details {{background:transparent; border:1px solid {LINE}; border-radius:6px}}
 </style>"""
 
 
@@ -225,7 +229,7 @@ question = c1.text_input("Your question", key="q", label_visibility="collapsed",
                          placeholder="e.g. What is the threshold for the Gold claim?")
 c2.button("Ask", key="ask")
 
-chip_cols = st.columns([0.5, 1.6, 1.4, 1.5, 1.5, 2])
+chip_cols = st.columns([0.4, 1.7, 1.6, 1.7, 1.8, 0.8])
 chip_cols[0].markdown('<div class="try">Try</div>', unsafe_allow_html=True)
 for i, (c, (label, ex)) in enumerate(zip(chip_cols[1:], EXAMPLES.items())):
     c.button(label, key=f"chip_{i}", help=ex, on_click=st.session_state.__setitem__, args=("q", ex))
