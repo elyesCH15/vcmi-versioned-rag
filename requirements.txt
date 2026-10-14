@@ -1,5 +1,5 @@
 # live demo
-streamlit>=1.40
+streamlit>=1.45
 openai>=1.40
 # rebuilding the change log, test set and index from the PDFs
 pymupdf>=1.24

@@ -4,6 +4,7 @@ and get the answer from the version that was in force on that date.
 Run locally:   streamlit run app.py      (set GROQ_API_KEY first; without it, the app shows retrieval only)
 """
 import hashlib, json, os, re, sys
+from datetime import datetime
 from datetime import date
 from html import escape
 from pathlib import Path
@@ -97,8 +98,15 @@ header[data-testid="stHeader"] {{background:transparent}}
 .hero {{border-bottom:1px solid {LINE}; padding-bottom:28px; margin-bottom:28px}}
 .qlabel {{font-size:14px; font-weight:600; margin:0 0 6px}}
 /* question box */
-[data-testid="stTextInput"] input {{height:52px; font-size:17px; background:#fff; color:{INK}; border-radius:4px}}
-[data-testid="stTextInput"] div[data-baseweb="input"] {{height:52px; border:1px solid #BDB6A6; border-radius:4px; background:#fff}}
+.st-key-q input {{height:52px; font-size:17px; background:#fff; color:{INK}; border-radius:4px}}
+.st-key-q div[data-baseweb="input"] {{height:52px; border:1px solid #BDB6A6; border-radius:4px; background:#fff}}
+/* typed date: looks like text, editable */
+.st-key-dtxt div[data-baseweb="input"] {{background:transparent; border:none; border-bottom:1px dashed #BDB6A6; border-radius:0}}
+.st-key-dtxt div[data-baseweb="input"]:focus-within {{border-bottom:1px solid {ACCENT}}}
+.st-key-dtxt input {{font-family:'Newsreader', serif; font-size:21px; color:{INK}; background:transparent; padding:2px 0; height:36px}}
+.stApp .dlabel {{font-size:13px; font-weight:600; margin:0 0 2px}}
+.stApp .dlabel span {{font-weight:400; color:{MUTED}}}
+.stApp .derr {{font-size:13px; color:#8A4B12; margin:2px 0 0}}
 /* Ask button */
 .st-key-ask button {{height:52px; width:100%; background:{ACCENT}; color:#fff; border:none; border-radius:4px; font-weight:600; font-size:16px}}
 .st-key-ask button:hover {{background:#174A38; color:#fff}}
@@ -118,26 +126,23 @@ header[data-testid="stHeader"] {{background:transparent}}
 .quote .src a, .card a {{color:{ACCENT}}}
 .note {{font-size:15px; color:#46423B; border-left:2px solid {ACCENT}; padding:4px 0 4px 12px; margin:20px 0 0}}
 /* timeline */
-.when {{display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:8px;
-       border-top:1px solid {LINE}; padding-top:28px; margin-top:28px}}
-.when .date {{font-family:'Newsreader', serif; font-size:26px}}
-.when .hint {{font-size:14px; color:{MUTED}}}
-.ruler {{position:relative; height:54px; margin:18px 10px 0}}
-.mk {{position:absolute; top:0; display:flex; flex-direction:column; gap:4px; font-size:13px; padding-left:6px; border-left:1px solid #BDB6A6; white-space:nowrap}}
+.ruler {{position:relative; height:36px; margin:10px 10px 0}}
+.mk {{position:absolute; top:0; display:flex; flex-direction:column; gap:1px; font-size:11.5px; line-height:1.2; padding-left:6px; border-left:1px solid #BDB6A6; white-space:nowrap}}
 .mk span:first-child {{font-weight:600}} .mk span:last-child {{color:{MUTED}}}
 .mk.right {{padding-left:0; padding-right:6px; border-left:none; border-right:1px solid #BDB6A6; text-align:right; transform:translateX(-100%)}}
 .mk.on {{border-color:{ACCENT}; border-width:2px; color:{ACCENT}}} .mk.on span:last-child {{color:{ACCENT}}}
-.years {{position:relative; height:18px; font-size:12px; color:{MUTED}; margin:0 10px}}
+.years {{position:relative; height:16px; font-size:11px; color:{MUTED}; margin:0 10px}}
 .years span {{position:absolute}}
 [data-testid="stSliderThumbValue"], [data-testid="stSliderTickBarMin"], [data-testid="stSliderTickBarMax"] {{display:none}}
-.inforce {{font-size:14px; color:{MUTED}; margin-top:10px}}
+.inforce {{font-size:13px; color:{MUTED}; padding-top:10px; line-height:1.5}}
 .inforce a {{color:{ACCENT}}}
+.st-key-datebox {{border:1px solid {LINE}; border-radius:6px; background:rgba(255,255,255,.55); padding:14px 18px 8px; margin-top:6px; gap:.35rem}}
 .foot {{font-size:13px; line-height:1.6; color:{MUTED}; border-top:1px solid {LINE}; padding-top:20px; margin-top:32px}}
 @media (max-width: 640px) {{
   .stApp .hero h1 {{font-size:38px}} .card {{padding:24px 20px}} .stApp .answer {{font-size:22px}}
   .mk:not(.on) span {{visibility:hidden}} .mk {{font-size:12px}}
 }}
-[data-testid="stTextInput"] input {{min-height:50px}}
+.st-key-q input {{min-height:50px}}
 [data-testid="stExpander"] details {{background:transparent; border:1px solid {LINE}; border-radius:6px}}
 </style>"""
 
@@ -159,6 +164,47 @@ def ruler_html(versions, start, end, selected):
     years = "".join(f'<span style="left:{pct(date(y, 1, 1), start, span):.2f}%">{y}</span>'
                     for y in range(start.year + 1, end.year + 1))
     return (f'<div class="ruler">{"".join(out)}</div>', f'<div class="years">{years}<span style="right:0">Today</span></div>')
+
+
+FORMATS = ["%d %B %Y", "%d %b %Y", "%B %d %Y", "%b %d %Y", "%Y-%m-%d", "%d/%m/%Y", "%d-%m-%Y", "%d.%m.%Y",
+           "%B %Y", "%b %Y", "%Y"]
+
+
+def fmt(d):
+    return f"{d.day} {d:%B %Y}"
+
+
+def parse_date(text):
+    """Read a typed date: '7 March 2026', 'March 7, 2026', '2026-03-07', '07/03/2026' (day first), 'March 2026', '2025'."""
+    t = re.sub(r"(\d)(st|nd|rd|th)\b", r"\1", text.strip().replace(",", " "), flags=re.I)
+    t = re.sub(r"\s+", " ", t)
+    for f in FORMATS:
+        try:
+            return datetime.strptime(t, f).date()
+        except ValueError:
+            pass
+    return None
+
+
+def on_date_typed():
+    """Typed date -> slider (clamped to the timeline)."""
+    ss = st.session_state
+    d, msg = parse_date(ss.dtxt), None
+    if d is None:
+        ss.date_msg = f'Could not read "{ss.dtxt}". Try 7 March 2026 or 2026-03-07.'
+        ss.dtxt = fmt(ss.d)
+        return
+    if d < ss.start:
+        d, msg = ss.start, f"The first version was published on {fmt(ss.start)}, so the date was set to that day."
+    elif d > ss.today:
+        d, msg = ss.today, "Dates after today aren't covered, so the date was set to today."
+    ss.d, ss.dtxt, ss.date_msg = d, fmt(d), msg
+
+
+def on_slider():
+    """Slider -> typed date."""
+    st.session_state.dtxt = fmt(st.session_state.d)
+    st.session_state.date_msg = None
 
 
 def answer_html(result, cmap, p, versions):
@@ -193,13 +239,16 @@ chunks, versions, bm25 = data(today)
 start = versions[0]["published"]
 if "d" not in st.session_state:
     st.session_state.d = today
+    st.session_state.dtxt = fmt(today)
+    st.session_state.date_msg = None
+st.session_state.start, st.session_state.today = start, today
 if "calls" not in st.session_state:
     st.session_state.calls = 0
 
 st.markdown(CSS, unsafe_allow_html=True)
 st.markdown(f"""<div class="hero"><div class="kicker">VCMI Claims Code of Practice · {len(versions)} versions, {start:%B %Y} to today</div>
 <h1>Ask the Code as it stood on any date.</h1>
-<p>Type a question, then move the date at the bottom. The answer is drawn only from the version in force on that day,
+<p>Type a question and pick a date: type it, or drag the slider. The answer is drawn only from the version in force on that day,
 with the page it came from.</p></div>""", unsafe_allow_html=True)
 
 st.markdown('<div class="qlabel">Your question</div>', unsafe_allow_html=True)
@@ -207,30 +256,36 @@ c1, c2 = st.columns([6, 1], vertical_alignment="center")
 question = c1.text_input("Your question", key="q", label_visibility="collapsed",
                          placeholder="e.g. What is the threshold for the Gold claim?")
 c2.button("Ask", key="ask")
+
 chip_cols = st.columns([0.5, 1.6, 1.4, 1.5, 1.5, 2])
 chip_cols[0].markdown('<div class="try">Try</div>', unsafe_allow_html=True)
 for i, (c, (label, ex)) in enumerate(zip(chip_cols[1:], EXAMPLES.items())):
     c.button(label, key=f"chip_{i}", help=ex, on_click=st.session_state.__setitem__, args=("q", ex))
 
+# date: type it or drag the slider (directly under the question)
 d = st.session_state.d
+active = asof.in_force(d, versions)
+with st.container(key="datebox"):
+    st.markdown('<p class="dlabel">Date <span>· type a date or drag the slider</span></p>', unsafe_allow_html=True)
+    dc1, dc2 = st.columns([1.15, 3], vertical_alignment="center")
+    dc1.text_input("Date", key="dtxt", on_change=on_date_typed, label_visibility="collapsed")
+    if active:
+        until = f"until {active['superseded_on']:%d %b %Y}" if active.get("superseded_on") else "still current"
+        dc2.markdown(f'<div class="inforce">Version in force: <b>v{escape(active["version"])}</b> '
+                     f'(published {active["published"]:%d %b %Y}, {until}) · '
+                     f'<a href="{escape(active["source"] or "#")}" target="_blank">source</a></div>', unsafe_allow_html=True)
+    if st.session_state.get("date_msg"):
+        st.markdown(f'<p class="derr">{escape(st.session_state.date_msg)}</p>', unsafe_allow_html=True)
+    ruler, years = ruler_html(versions, start, today, d)
+    st.markdown(ruler, unsafe_allow_html=True)
+    st.slider("Date slider", min_value=start, max_value=today, key="d", format="D MMM YYYY",
+              label_visibility="collapsed", on_change=on_slider)
+    st.markdown(years, unsafe_allow_html=True)
+
 p = asof.plan(question, d, versions) if question.strip() else None
 answer_box = st.container()
 
-# date section at the bottom
-st.markdown(f'<div class="when"><span class="date">{d.day} {d:%B %Y}</span>'
-            '<span class="hint">Drag to travel through the versions</span></div>', unsafe_allow_html=True)
-ruler, years = ruler_html(versions, start, today, d)
-st.markdown(ruler, unsafe_allow_html=True)
-st.slider("Date", min_value=start, max_value=today, key="d", format="D MMM YYYY", label_visibility="collapsed")
-st.markdown(years, unsafe_allow_html=True)
-active = asof.in_force(d, versions)
-if active:
-    until = f"until {active['superseded_on']:%d %b %Y}" if active.get("superseded_on") else "still current"
-    st.markdown(f'<div class="inforce">In force on this date: <b>v{escape(active["version"])}</b> '
-                f'(published {active["published"]:%d %b %Y}, {until}) · '
-                f'<a href="{escape(active["source"] or "#")}" target="_blank">source</a></div>', unsafe_allow_html=True)
-
-# answer (rendered above the date section)
+# answer
 with answer_box:
     if p:
         passages = asof.retrieve(question, p, chunks, bm25)

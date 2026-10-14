@@ -131,8 +131,6 @@ I used Claude (Anthropic) throughout, as a collaborator and as a tool inside the
 - **Grading.** Claude produced the independent second grading used to validate the LLM judge (`eval/analysis/claude_grades.jsonl`).
 - **What I did myself:** chose the problem and the documents, found and checked the six versions and their dates, ran every experiment, read the failures, and decided what to fix.
 
-[EDIT THIS SECTION SO IT MATCHES EXACTLY WHAT YOU DID.]
-
 ## Source documents
 
 The VCMI Claims Code of Practice is published by the Voluntary Carbon Markets Integrity Initiative at [vcmintegrity.org](https://vcmintegrity.org). This is an independent project, not affiliated with or endorsed by VCMI. The PDFs are not redistributed here; `data/manifest.csv` lists where to download each one and its SHA-256 hash, so you can check you have the same files.
