@@ -4,7 +4,6 @@ and get the answer from the version that was in force on that date.
 Run locally:   streamlit run app.py      (set GROQ_API_KEY first; without it, the app shows retrieval only)
 """
 import hashlib, json, os, re, sys
-from datetime import datetime
 from datetime import date
 from html import escape
 from pathlib import Path
@@ -100,13 +99,12 @@ header[data-testid="stHeader"] {{background:transparent}}
 /* question box */
 .st-key-q input {{height:52px; font-size:17px; background:#fff; color:{INK}; border-radius:4px}}
 .st-key-q div[data-baseweb="input"] {{height:52px; border:1px solid #BDB6A6; border-radius:4px; background:#fff}}
-/* typed date: looks like text, editable */
-.st-key-dtxt div[data-baseweb="input"] {{background:transparent; border:none; border-bottom:1px dashed #BDB6A6; border-radius:0}}
-.st-key-dtxt div[data-baseweb="input"]:focus-within {{border-bottom:1px solid {ACCENT}}}
-.st-key-dtxt input {{font-family:'Newsreader', serif; font-size:21px; color:{INK}; background:transparent; padding:2px 0; height:36px}}
-.stApp .dlabel {{font-size:13px; font-weight:600; margin:0 0 2px}}
+/* date field: compact, serif (works for both the older and the newer Streamlit date widget) */
+.st-key-dpick {{max-width:180px}}
+.st-key-dpick [data-testid="stDateInputField"], .st-key-dpick div[data-baseweb="input"] {{background:#fff; border-color:#BDB6A6}}
+.st-key-dpick [data-testid="stDateInputField"] *, .st-key-dpick input {{font-family:'Newsreader', serif; font-size:18px; color:{INK}}}
+.stApp .dlabel {{font-size:13px; font-weight:600; margin:0 0 8px}}
 .stApp .dlabel span {{font-weight:400; color:{MUTED}}}
-.stApp .derr {{font-size:13px; color:#8A4B12; margin:2px 0 0}}
 /* Ask button */
 .st-key-ask button {{height:52px; width:100%; background:{ACCENT}; color:#fff; border:none; border-radius:4px; font-weight:600; font-size:16px}}
 .st-key-ask button:hover {{background:#174A38; color:#fff}}
@@ -166,45 +164,15 @@ def ruler_html(versions, start, end, selected):
     return (f'<div class="ruler">{"".join(out)}</div>', f'<div class="years">{years}<span style="right:0">Today</span></div>')
 
 
-FORMATS = ["%d %B %Y", "%d %b %Y", "%B %d %Y", "%b %d %Y", "%Y-%m-%d", "%d/%m/%Y", "%d-%m-%Y", "%d.%m.%Y",
-           "%B %Y", "%b %Y", "%Y"]
-
-
-def fmt(d):
-    return f"{d.day} {d:%B %Y}"
-
-
-def parse_date(text):
-    """Read a typed date: '7 March 2026', 'March 7, 2026', '2026-03-07', '07/03/2026' (day first), 'March 2026', '2025'."""
-    t = re.sub(r"(\d)(st|nd|rd|th)\b", r"\1", text.strip().replace(",", " "), flags=re.I)
-    t = re.sub(r"\s+", " ", t)
-    for f in FORMATS:
-        try:
-            return datetime.strptime(t, f).date()
-        except ValueError:
-            pass
-    return None
-
-
-def on_date_typed():
-    """Typed date -> slider (clamped to the timeline)."""
-    ss = st.session_state
-    d, msg = parse_date(ss.dtxt), None
-    if d is None:
-        ss.date_msg = f'Could not read "{ss.dtxt}". Try 7 March 2026 or 2026-03-07.'
-        ss.dtxt = fmt(ss.d)
-        return
-    if d < ss.start:
-        d, msg = ss.start, f"The first version was published on {fmt(ss.start)}, so the date was set to that day."
-    elif d > ss.today:
-        d, msg = ss.today, "Dates after today aren't covered, so the date was set to today."
-    ss.d, ss.dtxt, ss.date_msg = d, fmt(d), msg
+def on_date_picked():
+    """Date field (calendar or typed DD/MM/YYYY) -> slider."""
+    if st.session_state.dpick:
+        st.session_state.d = st.session_state.dpick
 
 
 def on_slider():
-    """Slider -> typed date."""
-    st.session_state.dtxt = fmt(st.session_state.d)
-    st.session_state.date_msg = None
+    """Slider -> date field."""
+    st.session_state.dpick = st.session_state.d
 
 
 def answer_html(result, cmap, p, versions):
@@ -239,9 +207,7 @@ chunks, versions, bm25 = data(today)
 start = versions[0]["published"]
 if "d" not in st.session_state:
     st.session_state.d = today
-    st.session_state.dtxt = fmt(today)
-    st.session_state.date_msg = None
-st.session_state.start, st.session_state.today = start, today
+    st.session_state.dpick = today
 if "calls" not in st.session_state:
     st.session_state.calls = 0
 
@@ -266,16 +232,16 @@ for i, (c, (label, ex)) in enumerate(zip(chip_cols[1:], EXAMPLES.items())):
 d = st.session_state.d
 active = asof.in_force(d, versions)
 with st.container(key="datebox"):
-    st.markdown('<p class="dlabel">Date <span>· type a date or drag the slider</span></p>', unsafe_allow_html=True)
-    dc1, dc2 = st.columns([1.15, 3], vertical_alignment="center")
-    dc1.text_input("Date", key="dtxt", on_change=on_date_typed, label_visibility="collapsed")
+    st.markdown('<p class="dlabel">Date <span>· pick or type one (DD/MM/YYYY), or drag the slider</span></p>',
+                unsafe_allow_html=True)
+    dc1, dc2 = st.columns([1, 4], vertical_alignment="center")
+    dc1.date_input("Date", key="dpick", min_value=start, max_value=today, format="DD/MM/YYYY",
+                   on_change=on_date_picked, label_visibility="collapsed")
     if active:
         until = f"until {active['superseded_on']:%d %b %Y}" if active.get("superseded_on") else "still current"
         dc2.markdown(f'<div class="inforce">Version in force: <b>v{escape(active["version"])}</b> '
                      f'(published {active["published"]:%d %b %Y}, {until}) · '
                      f'<a href="{escape(active["source"] or "#")}" target="_blank">source</a></div>', unsafe_allow_html=True)
-    if st.session_state.get("date_msg"):
-        st.markdown(f'<p class="derr">{escape(st.session_state.date_msg)}</p>', unsafe_allow_html=True)
     ruler, years = ruler_html(versions, start, today, d)
     st.markdown(ruler, unsafe_allow_html=True)
     st.slider("Date slider", min_value=start, max_value=today, key="d", format="D MMM YYYY",
